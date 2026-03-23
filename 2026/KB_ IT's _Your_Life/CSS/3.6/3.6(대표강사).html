@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- 코딩은 한국말 안되는데 UTF가 이걸 도와주는 거 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>시원시원하게 살자!</title>
+
+    <style>
+      h2 {
+        color: red;
+      }
+
+      #header {
+        background: rgb(156, 156, 81);
+        width: 800px;
+      }
+      /* <!-- 원래 header라는 태그는 존재하지않는데, 내가 편의상 태그처럼 쓰는 거니까
+       #을 붙여주어야 태그가 된다 --> */
+
+      #hello {
+        background: yellow;
+        width: 600px; float:left;
+      }
+      #ok {
+        color: green;
+        background: red;
+        width: 200px;
+        float: left;
+      }
+
+      p {
+        color: rgb(255, 143, 255);
+      }
+      /* * {
+        color: blue;
+        background: yellow;
+      } */
+
+      .select{
+        /* 클래스를 select로 정한 것이고, 여기선 #대신 . 으로 불러옴 */
+        color:lightgreen;
+        background : red;
+      }
+    
+    </style>
+  </head>
+  <body>
+    <h2>제목 글자</h2>
+    <p>hello it's me. today is friday.</p>
+    <div id="header">
+      <!-- 평소처럼 h1을 사용해서 css를 적용하자니 h1가 많아서 어렵다
+       id는 쉽게 말해서 진짜 이 페이지 내에서 고유한 번호를 지정해주는 거다
+       그러니 id를 각각 만들어줘서 고유 넘버를 주면 그 div만 가지게 된다
+       즉, id를 header로 지정해줬기 때문에 css에서 내가 #header이라고 하면 그 div라는 것을 알게되는 것이다. -->
+      <h1>아무거나</h1>
+      
+    </div>
+    <div id="hello">
+      <h1>aside</h1>
+    </div>
+    <div id="ok">
+      <h1>content</h1>
+    </div>
+
+<ul>
+      <li class="select">사과</li>
+      <!-- 리스트 내에서 부분적으로 하기위해 class를 만들어 주는 것 -->
+      <li>바나나</li>
+      <li class="select">오렌지</li>
+      <li>감</li>
+    </ul>
+
+<!-- 전체 후손 중 아무거나 찾는 거는 띄어쓰기
+ 바로 아래 자손 중에 찾는 거는 >  -->
+  </body>
+</html>

@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        width: 500px;
+        margin: 10px auto;
+        /* 좌우 auto로 하면 가운데 정렬이 된다 */
+        border: 1px white;
+        background: pink;
+      }
+      /* 만약 background 색을 주고 싶을 때 body로 해버리면 화면 전체가 다 바뀌기 때문에
+      내가 꾸미는 공간만 하고 싶으면 body로 묶어서 style지정하는 게 아니라 
+      div를 크게 하나 더 묶어주는 것이 좋다 */
+      #top {
+        background: green;
+      }
+      #middle {
+        overflow: hidden;
+      }
+      #left {
+        float: left;
+        width: 150px;
+        background: red;
+      }
+      #right {
+        float: right;
+        width: 350px;
+        background: blue;
+      }
+      #bottom{
+        background: purple;
+      }
+
+
+
+
+
+
+      #container{
+        width: 500px; height: 300px;
+        border: 3px solid black;
+        overflow: hidden;
+        position: relative;
+      }
+      .circle{
+        position: absolute;
+        width: 100px; height: 100px;
+        border-radius: 50% 50%;
+      }
+      #red{
+        background: red;
+        left: 20px; top: 20px;
+      }
+    
+
+
+
+
+
+
+      #total{
+        background: skyblue;
+        width: 800px;
+        height: 800px;
+
+      }
+      #top1{
+        background: darkblue;
+        width: 800px;
+        height: 100px;
+        padding: 2px;
+
+
+      }
+      #top2{
+        /* 장바구니 부분 */
+        background: black;
+        color: yellow;
+        position: fixed;
+        top: 5px;
+        right: 5px;
+        width: 250px;
+        height: 100px;
+        border-radius: 100px 10px;
+
+      }
+      #center{
+        padding: 30px;
+        width: 800px;
+        height: 500px;
+        vertical-align: middle;
+
+      }
+
+      li{
+        list-style: none;
+        float: left;
+        padding: 15px;
+        text-align: center;
+      }
+      li:nth-child(2n){
+        background: orange;
+      }
+      li:nth-child(2n+1){
+        background-color: yellow; 
+      }
+      li:first-child{
+        border-radius: 50% 0 0 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="top">dndkdkdk</div>
+    <div id="middle">
+      <div id="left">ledfttt</div>
+      <div id="right">rightdfdfdfdfdf</div>
+
+      <div id="bottom">dngkgkgkgkgkgk</div>
+    </div>
+
+
+    <h1>Dummy Text</h1>
+    <div id="container">
+        <div id="red" class="circle"></div>
+        <div id="green" class="circle"></div>
+        <div id="yellow" class="circle"></div>
+        <div id="blue" class="circle"></div>
+        <!-- position: relative
+         주변의 다른 태그들은 이 요소가 이동했다는 사실을 인식하지 못하고 원래 위치를 피해 배치됩니다.
+         자기 자신의 원래 위치'**가 좌표의 0점(기준)이 됩니다.
+
+         position: absolute
+         이 요소가 원래 차지하던 공간이 0이 되기 때문에, 뒤에 오던 태그들이 이 요소가 없어진 줄 알고 그 빈자리를 메우기 위해 위로 올라옵니다.
+         static이 아닌(relative, absolute, fixed 중 하나가 걸린) 가장 가까운 조상 요소를 기준으로 좌표가 잡힙니다. 
+         만약 그런 조상이 없다면 최상위인 <body>를 기준으로 합니다.
+
+
+          -->
+
+    </div>
+<br>
+
+    <div id="total">
+        <div id="top1">
+            <ul>
+                <li>회원가입</li>
+                <li>제품정보                </li>
+                <li>게시판</li>
+                <li>장바구니</li>
+            </ul>
+
+
+
+
+        </div>
+        <div id="top2">장바구니 들어갈 자리</div>
+        <div id="center">테이블</div> 
+
+
+
+
+
+    </div>
+  </body>
+</html>

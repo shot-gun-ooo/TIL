@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- UTF-8은 그냥 다양한 언어를 한번에 지원해주는 것 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 화면을 줄였을 때 그 화면에 맞게 어느 정도 비율 유지해주는 것 -->
+    <title>3월5일입니다</title>
+    <!-- 이건 타이틀입니다~ -->
+    <!-- commmand + B : 왼쪽 메뉴 자동숨기기/보이기 왔다갔다  -->
+    <!-- command + shift + f : 자동정렬 -->
+
+    <style>
+      h1 {
+        color: red;
+        background: pink;
+      }
+      h6 {
+        color: peru;
+        background: blueviolet;
+      }
+    </style>
+    <!-- css : 내부스타일은 head에 -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- css : 외부스타일은 head에 -->
+    <!-- 괄호없이 link 먼저 기재하면 문법이 쫙 나온다. 다른 것들도 마찬가지 -->
+  </head>
+
+  <body>
+    <h1>일단 8시간 앉아 있는 게 먼저다...</h1>
+    <h6>이건 글자가 좀 작은가요</h6>
+    <p>
+      이거는 본문 단락을 생성한다던데, 어떻게 바뀌는지 구경해봅시다 엔터치면 또
+      어떻게 되려나요<br />-> 띄어쓰기가 안되네요
+    </p>
+    <hr />
+    <p>그럼 p를 따로따로 다 써야하나봐요</p>
+    <h5>ccs로 적용해봅시다</h5>
+    <a href="https://finance.naver.com/">네이버증권</a>
+
+    <script>
+      // 자바스크립트 내에서 주석은 슬러시 2개 -> 똑같이 commadn + / 누르면 자동 적용됨
+      // 자바스크립트 알림창은 브라우저에 따라 달라라지는 것
+      alert('환영합니다');
+    </script>
+    <!-- 내부에 스크립트 적는 것 -->
+    <script src="outerjava.js"></script>
+    <!-- 외부에 스크립트 가져오는 것 -->
+
+    <ul>
+      <li>쉬기</li>
+      <li>운동</li>
+    </ul>
+
+    <ol type="A">
+      <!-- 123대신 뭐 다른 걸로 하고 싶으면 type 지정 -->
+      <li>돈까스</li>
+      <li>마라탕</li>
+      <li>두쫀쿠+샌드위치</li>
+    </ol>
+    <!-- 만약 목록을 옆으로 하고 싶으면 이건 CSS영역 -->
+
+    <table border="1">
+      <tr>
+        <th width="100">음료</th>
+        <th width="300">메뉴</th>
+      </tr>
+      <tr>
+        <td>맥주</td>
+        <td>와인</td>
+      </tr>
+      <tr>
+        <td>음식</td>
+        <td>치킨</td>
+      </tr>
+    </table>
+
+    <img
+      src="https://ssl.pstatic.net/imgfinance/chart/main/KPI200.png?sidcode=1772684881939"
+      alt="이미지대체텍스트"
+      ,
+      width="500"
+    />
+    <!-- 네이버에서 아무거나 사진 이미지 주소 복사 -->
+  </body>
+</html>
