@@ -12,20 +12,27 @@ export default {
       ],
     };
   },
+  methods: {
+    toggleIdol(id){
+      const index = this.idols.findIndex((item)=> item.id === id);
+      this.idols[index].checked = !this.idols[index].checked;
+      console.log(id + '번 클릭됨');
+      
+    }
+  }
 };
 </script>
 
 <template>
-  <CheckboxItem v-for="idol in idols" 
-  : key="idol.id"
-  : id="idol.id"
-  :name="idol.name"
-  :checked="idol.checked"
-  @check-changed="toggleIdol">
-
-</CheckboxItem>
-
- 
+  <ul>
+  <CheckboxItem
+    v-for="idol in idols"
+    :key="idol.id"
+    :id="idol.id"
+    :name="idol.name"
+    :checked="idol.checked"
+    @check-changed="toggleIdol"
+  >
+  </ul>
+  
 </template>
-
-
