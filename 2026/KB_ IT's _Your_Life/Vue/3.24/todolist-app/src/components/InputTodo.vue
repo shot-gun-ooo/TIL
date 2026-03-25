@@ -21,7 +21,7 @@ export default {
    methods: {
     addTodoHandler() {
         if (this.todo.length>=2){
-            this.$emit('add-tood'. this.todo);
+            this.$emit('add-todo', this.todo);
             this.todo=''
         }
     },
