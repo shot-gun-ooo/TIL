@@ -6,7 +6,7 @@
     <div class="card card-default card-borderless">
       <div class="card-body">
         <InputTodo @add-todo="addTodo" />
-        <TodoList :todoList="'todoList'"/>
+        <TodoList :todoList="todoList" @toggle-completed="toggleCompleted" />
       </div>
     </div>
   </div>
@@ -21,7 +21,7 @@ let ts = new Date().getTime();
 export default {
   name: 'App',
   // 파일이름과 똑같이
-  components: {TodoList, InputTodo},
+  components: { TodoList, InputTodo },
   data() {
     return {
       todoList: [

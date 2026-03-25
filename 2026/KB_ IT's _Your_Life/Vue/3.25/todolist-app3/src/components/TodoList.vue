@@ -5,7 +5,13 @@
         <!-- <li v-for="todoItem in todoList" :key="todoItem.id">
           {{ todoItem.todo }}
         </li> -->
-        <TodoListItem v-for="todoItem in todoList" :key="todoItem.id" :todoItem="todoItem"/>
+        <TodoListItem
+          v-for="todoItem in todoList"
+          :key="todoItem.id"
+          :todoItem="todoItem"
+          @toggle-completed="$emit('toggle-completed', $event)"
+    
+        />
       </ul>
     </div>
   </div>
