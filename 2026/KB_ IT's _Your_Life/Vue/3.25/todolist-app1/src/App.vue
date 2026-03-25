@@ -3,7 +3,13 @@
     <h1>건우의 todo앱</h1>
 
     <ul>
-      <TodoListItem v-for="item in todoList" :key="item.id" :todoItem="item" />
+      <TodoListItem
+        v-for="item in todoList"
+        :key="item.id"
+        :todoItem="item"
+        @toggle-completed="toggleTodo"
+        @delete-todo="deleteTodo"
+      />
     </ul>
   </div>
 </template>
@@ -23,6 +29,17 @@ export default {
         { id: 3, todo: '맛있는 저녁 먹기', completed: false },
       ],
     };
+  },
+  methods: {
+    toggleTodo(id) {
+      const item = this.todoList.find((todo) => todo.id === id);
+      if (item) {
+        item.completed = !item.completed;
+      }
+    },
+    deleteTodo(id) {
+      this.todoList = this.todoList.filter((todo) => todo.id !== id);
+    },
   },
 };
 </script>

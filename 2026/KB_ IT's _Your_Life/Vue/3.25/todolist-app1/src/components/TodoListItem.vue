@@ -1,9 +1,9 @@
 <template>
   <li class="list-group-item">
-    <input type="checkbox" :checked="todoItem.completed" />
+    <input type="checkbox" :checked="todoItem.completed" @click="toggle" />
 
     <span>{{ todoItem.todo }}</span>
-    <button class="float-end">삭제</button>
+    <button class="float-end" @click="deleteItem">삭제</button>
   </li>
   <div></div>
 </template>
@@ -18,6 +18,15 @@ export default {
     todoItem: {
       type: Object,
       required: true,
+    },
+  },
+  emits: ['toggle-completed', 'delete-todo'],
+  methods: {
+    toggle() {
+      this.$emit('toggle-completed', this.todoItem.id);
+    },
+    deleteItem() {
+      this.$emit('delete-todo', this.todoItem.id);
     },
   },
 };
