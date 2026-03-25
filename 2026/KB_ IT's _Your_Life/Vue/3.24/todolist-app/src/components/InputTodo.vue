@@ -14,12 +14,17 @@
 <script>
 export default {
   name: 'InputTodo',
+  emits:['add-todo'],
   data() {
     return { todo: '' };
   },
-  emits: ['add-todo'],
-  methods: {
-    addTodoHandler() {},
+   methods: {
+    addTodoHandler() {
+        if (this.todo.length>=2){
+            this.$emit('add-tood'. this.todo);
+            this.todo=''
+        }
+    },
   },
 };
 </script>
