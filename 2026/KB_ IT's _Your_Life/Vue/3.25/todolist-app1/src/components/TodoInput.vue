@@ -21,8 +21,8 @@ export default {
   emits: ['add-todo'],
   methods: {
     addTodo() {
-      if (this.todo.trim() == '') {
-        this.$emit('add-todo, this.todo');
+      if (this.todo.trim() !== '') {
+        this.$emit('add-todo', this.todo);
         this.todo = '';
       }
     },
