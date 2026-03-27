@@ -1,13 +1,13 @@
 <template>
-  <div>
-
-  </div>
+  <div><Calc /></div>
 </template>
 
-<script setup>
-
+<script>
+import Calc from './components/Calc.vue';
+export default {
+  name: 'App',
+  components: { Calc },
+};
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
