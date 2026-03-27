@@ -3,6 +3,7 @@
     <div class="col">
       <div class="input-group">
         <input
+          ref="inputRef"
           type="text"
           class="form-control"
           placeholder="할일을 여기에 입력!"
@@ -17,21 +18,23 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'InputTodo',
-  data() {
-    return { todo: '' };
-  },
-  emits: ['add-todo'],
-  methods: {
-    addTodoHandler() {
-      console.log('addTodoHandler 호출됨.');
-      if (this.todo.length >= 3) {
-        this.$emit('add-todo', this.todo);
-        this.todo = '';
-      }
-    },
-  },
+<script setup>
+import { ref, onMounted } from 'vue';
+
+const todo = ref('');
+const emit = defineEmits(['add-todo']);
+const inputRef = ref(null);
+
+onMounted(() => {
+  inputRef.value.focus();
+});
+
+const addTodoHandler = () => {
+  console.log('addTodoHandler 호출됨.');
+  if (todo.value.length >= 3) {
+    emit('add-todo', todo.value);
+    todo.value = '';
+    inputRef.value.focus();
+  }
 };
 </script>

@@ -17,14 +17,11 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import TodoListItem from './TodoListItem.vue';
 
-export default {
-  name: 'TodoList',
-  components: { TodoListItem },
-  props: { todoList: { type: Array, required: true } },
-};
+defineProps({todoList: { type: Array, required: true}})
+const emit = defineEmits(['delete-todo','toggle-completed'])
 </script>
 
 <style></style>
