@@ -1,47 +1,35 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <div>
+    <h1>나의 체크리스트</h1>
+    <InputTodo @add-item="addItem" />
+    <hr />
+    <TodoList :list="items" @delete-item="deleteItem" @toggle-item="toggleItem" />
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
+<script setup>
+import { ref } from 'vue';
+import InputTodo from './components/InputTodo.vue';
+import TodoList from './components/TodoList.vue';
+
+const items = ref([{id:1, todo:'vue마스터', completed:false},
+  {id:2, todo:'vㅇㄹㅇ마스터', comppleted:true}
+]);
+const addItem = (newText) => {
+  items.value.push({
+    id: Date.now(),
+    todo:newText,
+    completed:false
+  });
+  console.log('새로운 일이 추가되었다.', newText);
+};
+const deleteItem =(id)=>{
+  items.value = items.value.filter(item=> item.id !==id)
 }
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+const toggleItem = (id)=>{
+  const target = items.value.find(item=>item.id === id);
+  if(target) target.completed = !target.completed;
 }
+</script>
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
+<style></style>
