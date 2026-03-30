@@ -1,47 +1,29 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <div>
+    <InputTodo @add-todo="addTodo" />
+    <strong>최근 추가된 할 일:</strong>
+    {{ state.todoList.length > 0 ? state.todoList[state.todoList.length - 1].content : '없음' }}
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
+<script setup>
+import InputTodo from './components/InputTodo.vue';
+import { reactive } from 'vue';
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
+const state = reactive({
+  todoList: [],
+});
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+const addTodo = (todo) => {
+  if (todo.length >= 2) {
+    state.todoList.push({
+      id: new Date().getTime(),
+      content: todo,
+      completed: false,
+    });
+    console.log('부모가 받은 데이터', todo);
   }
+};
+</script>
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
+<style></style>
