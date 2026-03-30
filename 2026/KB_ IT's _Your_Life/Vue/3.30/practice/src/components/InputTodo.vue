@@ -1,28 +1,26 @@
 <template>
-  <div>
+  <div class="input-group mb-3 shadow-sm">
     <input
-      type="text"
+      v-model.trim="todo"
+      @keyup.enter="sendTodo"
       class="form-control"
-      placeholder="뭐하고싶어용"
-      v-model="todo"
-      @keyup.enter="addTodoHandler"
-    />
-    <button class="btn btn-primary" @click="addTodoHandler">
-      할 일을 추가해봐용
-    </button>
+      placeholder="할 일을 입력하세요 (2글자 이상)"
+    >
+    </input>
+    <button @click="sendTodo" class="btn btn-primary fw-bold">추가</button>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue';
-const emit = defineEmits(['add-todo']);
 const todo = ref('');
-const addTodoHandler = () => {
-  if (todo.value.length >= 3) {
+const emit = defineEmits(['add-todo']);
+const sendTodo = () => {
+  if (todo.value.length >= 2) {
     emit('add-todo', todo.value);
     todo.value = '';
   } else {
-    alert('3글자 이상 입력해용');
+    alert('2글자 이상 입력하세요!');
   }
 };
 </script>

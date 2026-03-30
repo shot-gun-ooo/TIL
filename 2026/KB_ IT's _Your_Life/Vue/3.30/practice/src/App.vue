@@ -1,29 +1,31 @@
 <template>
   <div>
+    <h3 class="text-center mb-4">:: Todolist App (입력 연결 단계)</h3>
     <InputTodo @add-todo="addTodo" />
-    <strong>최근 추가된 할 일:</strong>
-    {{ state.todoList.length > 0 ? state.todoList[state.todoList.length - 1].content : '없음' }}
+    <h5>배달된 데이터 목록 (총 {{ state.todoList.length }}개)</h5>
+    <pre>{{ state.todoList }}</pre>
+
+
+
   </div>
 </template>
 
 <script setup>
-import InputTodo from './components/InputTodo.vue';
 import { reactive } from 'vue';
+import InputTodo from './components/InputTodo.vue';
 
-const state = reactive({
-  todoList: [],
-});
-
-const addTodo = (todo) => {
-  if (todo.length >= 2) {
-    state.todoList.push({
-      id: new Date().getTime(),
-      content: todo,
-      completed: false,
-    });
-    console.log('부모가 받은 데이터', todo);
-  }
-};
+const state = reactive({todoList:[]})
+const addTodo = (todoText) => {
+  state.todoList.push({
+    id : Date.now(),
+    content: todoText,
+    completed : false
+  })
+  console.log('데이터 추가 완료',todoText);
+  
+}
 </script>
 
-<style></style>
+<style>
+
+</style>
