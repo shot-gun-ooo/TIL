@@ -4,50 +4,85 @@
     <router-view />
   </div>
 </template>
+
 <script setup>
-import { reactive, computed, provide } from 'vue';
+import { reactive, computed, provide, onMounted } from 'vue'; // 1. onMounted 추가
 import Header from '@/components/Header.vue';
 import axios from 'axios';
 
 const states = reactive({
   todoList: [],
 });
-const BASEURI = '/api/todos';
-//컴포넌트 초기화될 때 json-server로 연결해서 전체 목록 가지고 와야함.
-//백엔드 서버로 부터 가지고 온 목록을 toodolist에 넣어주어야함.
-//화면에 todolist 목록을 보일 것임
 
+const BASEURI = '/api/todos';
+
+// [조회] 서버에서 목록 가져오기
 const fetchTodoList = async () => {
-  //axios필요 -> import 필요함
   try {
-    let response = await axios.get(BASEURI);
-    if (response.status == 200) {
-      console.log(response.data);//콘솔에 찍어서 받은 데이터를 확인해주는 습관이 좋음
-      //states.todoList에 데이터를 넣어주어야 화면에 나타남.
-      states.todoList = response.data
-    } else {
-      console.log('데이터 전체 조회 실패');
+    const response = await axios.get(BASEURI);
+    if (response.status === 200) {
+      console.log('✅ 데이터 로드 성공:', response.data);
+      states.todoList = response.data;
     }
-  } catch (error) {console.log("예상치 못한 에러가 발생함. 에러 정보는 "+e);
-  
-    
+  } catch (e) {
+    // 2. 아까 error라고 쓰고 e라고 출력했던 오타 수정
+    console.error('❌ 서버 연결 에러:', e.message);
   }
 };
-fetchTodoList();
-const addTodo = ({ todo, desc }) => {
+
+// 3. 앱이 켜질 때 실행되도록 명시적으로 호출
+onMounted(() => {
+  fetchTodoList();
+});
+
+// [추가] 일단 로컬에서만 작동 (나중에 axios.post로 바꿀 예정)
+const addTodo = async ({ todo, desc }) => {
+  try {
+    const payload = { todo, desc, done: false };
+    const response = await axios.post(BASEURI, payload);
+    if (response.status === 201) {
+      states.todoList.push(response.data);
+      console.log('✅ 2단계 성공: 서버에 새 할 일 저장 완료!');
+    }
+  } catch (e) {
+    console.error('❌ 2단계 실패: 저장 중 에러 발생', e.message);
+  }
   states.todoList.push({ id: new Date().getTime(), todo, desc, done: false });
 };
+
 const updateTodo = ({ id, todo, desc, done }) => {
   let index = states.todoList.findIndex((todo) => todo.id === id);
-  states.todoList[index] = { id, todo, desc, done };
+  if (index !== -1) states.todoList[index] = { id, todo, desc, done };
 };
-const deleteTodo = (id) => {
-  let index = states.todoList.findIndex((todo) => todo.id === id);
-  states.todoList.splice(index, 1);
+
+const deleteTodo = async (id) => {
+  try {
+    const response = await axios.delete(`${BASEURI}/${id}`);
+    if (response.status === 200) {
+      let index = states.todoList.findIndex((todo) => todo.id === id);
+      states.todoList.splice(index, 1);
+      console.log(`✅ ${id}번 데이터 삭제 완료!`);
+    }
+  } catch (e) {
+    console.error('❌ 삭제 실패:', e.message);
+  }
 };
-const toggleDone = (id) => {
-  let index = states.todoList.findIndex((todo) => todo.id === id);
-  states.todoList[index].done = !states.todoList[index].done;
+
+const toggleDone = async (id) => {
+  try {
+    const todo = states.todoList.find((t) => t.id === id);
+    const response = await axios.patch(`${BASEURI}/${id}`, {
+      done: !todo.done,
+    });
+
+    if (response.status === 200) {
+      // 3. 서버가 오케이(200) 하면, 내 화면의 체크박스 상태도 바꿉니다.
+      todo.done = !todo.done;
+      console.log(`✅ ${id}번 항목 상태 변경 완료!`);
+    }
+  } catch (e) {
+    console.error('❌ 상태 변경 실패:', e.message);
+  }
 };
 provide(
   'todoList',
