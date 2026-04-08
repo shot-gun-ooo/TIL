@@ -26,6 +26,8 @@ import { useTodoListStore } from '@/stores/todoList';
 // Pinia 스토어 불러오기
 const todoListStore = useTodoListStore();
 
+todoListStore.fetchTodoList();
+
 // 만약 화면이 처음에 비어있다면, 여기서 데이터를 한 번 불러와야 할 수도 있습니다.
-// todoListStore.fetchTodoList(); 
+// todoListStore.fetchTodoList();
 </script>
