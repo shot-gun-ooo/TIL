@@ -26,6 +26,9 @@ public class Array05 {
 
         // 배열의 값을 처음부터 끝까지 하나씩 score 변수에 담아 반복
         int sum = 0;
+        for(int score : scores){
+            sum += score;
+        }
         // 구현
 
         double avg = (double) sum / scores.length;
@@ -37,6 +40,10 @@ public class Array05 {
         // 2. String 배열에 for-each문 사용
         // ===============================
         String[] fruits = {"사과", "바나나", "딸기", "포도"};
+
+        for(String fruit : fruits){
+            System.out.println(fruit);
+        }
 
         // 구현
 
