@@ -1,4 +1,4 @@
-package com.kb.chap07n.makeclass.d_instanceofcheck;
+package check
 
 
 public class Person {
