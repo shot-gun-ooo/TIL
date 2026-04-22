@@ -10,4 +10,28 @@ public interface RemoteControl {
 
     //컴파일러가 인터페이스안에 넣는 메서드는 자동으로
     //public abstract을 무조건 메서드 앞에 붙여줌.
+
+    default void setMute(boolean mute){
+        if(mute){
+            System.out.println("무음");
+        }
+        else{
+            System.out.println("무음을 해제");
+        }
+        defaultCommon();
+    }
+
+    static void changeBattery(){
+        System.out.println("건전지를 교환합니다.");
+        staticCommon();
+    }
+
+    private void defaultCommon(){
+        System.out.println("디폴트 메소드 공통 코드");
+    }
+    private static void staticCommon(){
+        System.out.println("정적 메소드 공통 코드");
+    }
+
+
 }
