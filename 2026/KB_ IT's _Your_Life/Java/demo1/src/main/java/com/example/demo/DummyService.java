@@ -15,5 +15,6 @@ public class DummyService {
 
     public void logEvent(String event) {
         System.out.println("Event logged: " + event);
+
     }
 }
