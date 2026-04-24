@@ -1,4 +1,0 @@
-const user1 = 'kim';
-const user2 = 'park';
-const user3 = 'choi';
-module.exports = {user1, user2, user3}

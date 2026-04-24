@@ -1,7 +1,0 @@
-{
-  "todos": [
-    { "id": "1", "todo": "Vue 공부하기", "done": false },
-    { "id": "2", "todo": "Axios 실습하기", "done": false },
-    { "id": "3", "todo": "맛있는 점심 먹기", "done": true }
-  ]
-}
