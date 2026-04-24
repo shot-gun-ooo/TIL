@@ -13,7 +13,7 @@ public class Demo1Application {
     }
 
     public void sayHello() {
-        System.out.println("Hello from Demo1Application!");
+        System.out.println("Hellㄷo from Demo1Application!");
     }
 
     public int addNumbers(int a, int b) {
@@ -21,7 +21,7 @@ public class Demo1Application {
     }
 
     public String getStatus() {
-        return "Application is running";
+        return "Application is rㄷunning";
     }
 
 
