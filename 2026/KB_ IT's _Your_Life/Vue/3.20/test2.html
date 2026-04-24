@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <input type="text" v-model="amount" />
+      <img
+        v-show="amount < 0"
+        src="https://i.pinimg.com/736x/93/f0/56/93f056851d56e9085839f74b234fc6ea.jpg"
+        title ="마이너스는 허용하지 않습니다"
+      />
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script type="text/JavaScript">
+      var vm = Vue.createApp({
+          data(){
+              return {amount:''};
+          },
+      }).mount('#app')
+    </script>
+  </body>
+</html>

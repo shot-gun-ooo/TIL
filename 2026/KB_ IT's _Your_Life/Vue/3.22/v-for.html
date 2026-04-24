@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <table id="list">
+        <thead>
+          <tr>
+            <th>번호</th>
+            <th>이름</th>
+            <th>전화번호</th>
+          </tr>
+        </thead>
+        <tbody id="contacts">
+          <template v-for="(contact, index) in contacts" :key="contact.no">
+            <tr>
+              <td>{{contact.no}}</td>
+              <td>{{contact.name}}</td>
+              <td>{{contact.tel}}</td>
+            </tr>
+            <tr class="divider" v-if="index % 4 === 3">
+              <td colspan="3"></td>
+            </tr>
+          </template>
+        </tbody>
+      </table>
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script type="text/JavaScript">
+      var vm = Vue.createApp({
+          name : "APP",
+          data(){
+              return{
+                  "contacts" : [
+                      {"no":1011, "name":"RM", "tel":"010-3455-6654"},
+                      {"no":1012, "name":"rd", "tel":"010-3455-6654"},
+                      {"no":1013, "name":"qq", "tel":"010-3455-6654"},
+                      {"no":1014, "name":"Rgd", "tel":"010-3455-6654"},
+                      {"no":1015, "name":"RMdfdf", "tel":"010-3455-6654"},
+                      {"no":1016, "name":"R22Mggdfg", "tel":"010-3455-6654"},
+                      {"no":1018, "name":"RMdfdf", "tel":"010-3455-6654"},
+                  ]
+              }
+          }
+      }).mount("#app")
+    </script>
+  </body>
+</html>

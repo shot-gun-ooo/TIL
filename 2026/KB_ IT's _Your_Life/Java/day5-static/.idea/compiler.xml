@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <excludeFromCompile>
+      <file url="file://$PROJECT_DIR$/src/sub/object/b_memeber/Earth.java" />
+      <file url="file://$PROJECT_DIR$/src/sub/object/method/Run(1).java" />
+    </excludeFromCompile>
+  </component>
+</project>

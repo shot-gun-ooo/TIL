@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <input v-model="todoItem.todo" placeholder="할일입력" />
+      <input v-model="todoItem.desc" placeholder="설명" />
+      <br />
+      <button @click="addDirect">그대로 추가</button>
+      <button @click="addSpread">전개연산자로 추가</button>
+      <br />
+      <h3>할일 목록</h3>
+      <ul>
+        <li v-for="(t, i) in todos" :key="i">{{t.todo}}-{{t.desc}}</li>
+      </ul>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+      Vue.createApp({
+        name: 'APP',
+        data() {
+          return {
+            todoItem: {
+              todo: '',
+              desc: '',
+            },
+            todos: [],
+          };
+        },
+        methods: {
+          // methods 시작!
+          addDirect() {
+            this.todos.push(this.todoItem);
+          }, // 쉼표 찍고 다음 함수로 연결
+          addSpread() {
+            this.todos.push({ ...this.todoItem });
+          },
+        }, // methods 끝! (여기서 닫아야 함)
+      }).mount('#app');
+    </script>
+  </body>
+</html>

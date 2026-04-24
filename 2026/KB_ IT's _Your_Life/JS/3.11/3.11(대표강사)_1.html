@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      //   let 함수 = function () {
+      //     alert('함수');
+      //   };
+      //   함수();
+
+      //   function A() {
+      //     alert('함수2');
+      //   }
+
+      //   A();
+
+      함수 = function () {
+        alert('1');
+      };
+      function 함수() {
+        alert('2');
+      }
+
+      함수();
+
+      function f(x) {
+        return x * x;
+        // return은 함수가 계산을 끝내고
+        //  '나를 불렀던 지점'으로 결과물을 배달해주는 것이다!
+        // 덕분에 우리는 함수 밖에서도 그 계산 결과를 변수에 담거나 다른 곳에 사용할 수 있다!
+      }
+      alert(f(3));
+      function add(x, y) {
+        // 입력값 2개 주면서 add 이름의 함수를 호출(사용)했을 때
+        // 어떤 것들을 처리할지 여러줄을 넣어줌(기능 정의)
+        // x + y;(return없으면 계산하고나서 그냥 먹어버림)
+        return x + y;
+      }
+      alert(add(10, 20));
+      let result = add(100, 200);
+      alert(result);
+      alert('할인하는 금액은' + add(111, 222) * 2);
+      alert('할인하는 금액은' + result * 2);
+
+      function action(callback) {
+        callback();
+      }
+      //   callback함수 -> 함수호출시 매개변수로 함수를 전달하는 함수
+      function eat() {
+        alert('밥먹자');
+      }
+      function run() {
+        alert('달리자.');
+      }
+      let lunch = function () {
+        alert('glgl');
+      };
+      action(eat);
+      action(run);
+      action(eat);
+      action(function () {
+        alert('잘살아보자');
+      });
+      //   일회성으로 쓸 때 익명쓰기도 함
+      //   함수를 정의한 적이 없는데 지금 잠깐 하나 써야할 때
+
+      let object = {
+        number: 273,
+        string: 'dsdss',
+        boolean: true,
+        array: [23, 12, 11],
+        method: function () {},
+      };
+
+      alert(object.number);
+    </script>
+  </head>
+  <body></body>
+</html>

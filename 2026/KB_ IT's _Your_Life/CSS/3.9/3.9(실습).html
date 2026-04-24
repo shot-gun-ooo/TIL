@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- /* 6. 미디어 쿼리 설정(방향 전환) */ -->
+    <style>
+      @media screen and (orientation: portrait) {
+        body {
+          background: red;
+        }
+      }
+
+    /* <!-- 7. 반응형 웹 패턴 --> */
+    @media screen and (max-width:767px0{
+        body{width: auto;}
+        #menuu{width: auto float none;}
+    }
+    </style>
+    <!-- 1. 수평 정렬  -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border border-box;
+      }
+      /* 모든 태그(*)의 여백을 0으로 만들어라!"라고 선언해서, 도화지를 깨끗하게 비우고 시작하는 것 */
+      .container {
+        overflow: hidden;
+      }
+      .item {
+        float: left;
+        margin: 0 3px;
+        padding: 10px;
+        border: 1px solid black;
+      }
+
+      /* <!-- 2.One True 레이아웃 --> */
+      body {
+        width: 500px;
+        margin: 10px auto;
+      }
+      #top {
+        background-color: green;
+      }
+      #bottom {
+        background-color: purple;
+      }
+      #middle {
+        overflow: hidden;
+      }
+      #left {
+        float: left;
+        width: 150px;
+        background-color: red;
+      }
+      #right {
+        float: right;
+        width: 350px;
+        background-color: blue;
+      }
+      /* <!-- 3. 절대위치를 이용한 요소 배치 --> */
+      #rec {
+        width: 500px;
+        height: 300px;
+        overflow: hidden;
+        border: 1px solid black;
+        position: relative;
+      }
+
+      .circle {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        position: absolute;
+      }
+
+      #red {
+        background-color: red;
+        left: 20px;
+        top: 20px;
+      }
+
+      #blue {
+        background-color: blue;
+        right: 20px;
+        bottom: 20px;
+      }
+      /* <!-- 4. 요소의 중앙 배치 --> */
+      #entire {
+        background-color: orange;
+        width: 500px;
+        height: 250px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -250px;
+        margin-top: -125px;
+      }
+      /* <!-- 5. 고정 바 배치 --> */
+      .main {
+        margin-top: 50px;
+        margin-left: 50px;
+      }
+      .topbar {
+        background-color: red;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        height: 50px;
+      }
+      .leftbar {
+        background-color: blue;
+        position: fixed;
+        left: 0;
+        top: 50px;
+        bottom: 0;
+        width: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 1. 수평 정렬  -->
+    <div>
+      <p>dslfkdlfkldkfldkfldkfldkfldkfldkfldkf</p>
+    </div>
+    <div class="container">
+      <div class="item">menu1</div>
+      <div class="item">menu2</div>
+      <div class="item">menu3</div>
+      <div class="item">menu4</div>
+    </div>
+    <div>
+      <p>dfdkfldkflkwlklqklwkqsoppwdksdmlwoi</p>
+    </div>
+
+    <!-- 2.One True 레이아웃 -->
+    <div id="top">fdfdfkdmfkdmkfmdkmfkwmemew</div>
+    <div id="midddle">
+      <div id="left">dfmdfmdmfkdmfdfdf</div>
+      <div id="right">2knwkodio1ioi3dn3io</div>
+    </div>
+    <div id="bottom">dkfkdmfkdmkfmdkmfdkmfkdmfkmdkssss</div>
+
+    <!-- 3. 절대위치를 이용한 요소 배치 -->
+    <h1>Dummy Text</h1>
+    <div id="rec">
+      <div id="red" class="circle"></div>
+      <div id="blue" class="circle"></div>
+    </div>
+    <h1>Dummy Text</h1>
+
+    <!-- 4. 요소의 중앙 배치 -->
+    <div id="entire">
+      <h1>요소의 중앙 배치</h1>
+    </div>
+
+    <!-- 5. 고정 바 배치 -->
+    <div class="topbar"></div>
+    <div class="leftbar"></div>
+    <div class="main">
+      <h1>dfdfdfdfdf</h1>
+      <h2>dfdfdf2333222</h2>
+      <h3>df0033moo3md</h3>
+    </div>
+    <!-- 6. 미디어 쿼리 설정(방향 전환) -->
+    아무말이나 하는중입니다 우하하하하
+    <br />
+    이히히히히히 파이팅
+    <!-- 7. 반응형 웹 패턴 -->
+    <div id="menuu">
+      <ul>
+        <li>메뉴a</li>
+        <li>메뉴b</li>
+        <li>메뉴c</li>
+      </ul>
+    </div>
+
+    <div id="section">
+      <h1>ddfdffdfdfdfdfd</h1>
+      <p>
+        dfdfdf2223eifeifniefjnfknfdkfnlnl222jpojropj23oprj32jrop3jrpjepojropejropejropejrperp
+      </p>
+    </div>
+  </body>
+</html>

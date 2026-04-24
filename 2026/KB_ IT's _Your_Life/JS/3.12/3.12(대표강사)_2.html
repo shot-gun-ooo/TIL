@@ -1,0 +1,57 @@
+<!-- <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function user() {
+        alert('ok');
+      }
+      user = document.getElementById('user').value;
+      if (user == 'root') {
+        result1.innerHTML = '<font color=red> 아이디 성공 </font>';
+      } else {
+        result1.innerHTML = '<font color=blue> 실패/재로그인해주세요 </font>';
+        setTimeout(go, 2000);
+      }
+    </script>
+  </head>
+  <body>
+    아이디<input type="text" id="user" onblur="user()" />
+    <br>
+    <div id="result1"></div>
+  </body>
+</html> -->
+
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>아이디 체크</title>
+    <script>
+      function checkUser() { // 함수 이름을 다르게 지어줍니다!
+        // 1. 함수가 실행되는 "시점"에 값을 가져옵니다.
+        let inputVal = document.getElementById('user').value;
+        let display = document.getElementById('result1');
+
+        // 2. 비교 로직을 함수 안에 넣습니다.
+        if (inputVal == 'root') {
+          display.innerHTML = '<font color=red> 아이디 성공 </font>';
+        } else {
+          display.innerHTML = '<font color=blue> 실패/재로그인해주세요 </font>';
+          // go라는 함수가 정의되어 있다면 2초 뒤 실행됩니다.
+          // setTimeout(go, 2000); 
+        }
+      }
+    </script>
+</head>
+<body>
+    아이디 <input type="text" id="user" onblur="checkUser()" />
+    <br>
+    <div id="result1"></div>
+</body>
+</html>

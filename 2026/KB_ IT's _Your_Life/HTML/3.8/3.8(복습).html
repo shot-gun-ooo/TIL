@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="https://www.youtube.com/watch?v=VgDu6OAffp0">슬의생</a>
+    <hr />
+    <ul>
+      <li>사과</li>
+      <li>바나나</li>
+    </ul>
+
+    <ul>
+      <li>
+        <b>과일</b>
+        <ol>
+          <li>사과</li>
+          <li>바나나</li>
+        </ol>
+      </li>
+    </ul>
+
+    <table border="1">
+      <tr>
+        <th></th>
+        <th>월</th>
+        <th>화</th>
+        <th>수</th>
+        <th>금</th>
+        <th>토</th>
+      </tr>
+      <tr>
+        <td>1교시</td>
+        <td>영어</td>
+        <td>국어</td>
+        <td>과학</td>
+        <td>미술</td>
+        <td>기술</td>
+      </tr>
+    </table>
+
+    <table border="1">
+      <tr>
+        <th colspan="2">지역별 홍차</th>
+      </tr>
+      <tr>
+        <th rowspan="3">중국</th>
+        <td>정산소종</td>
+      </tr>
+      <tr>
+        <td>기문</td>
+      </tr>
+      <tr>
+        <td>운남</td>
+      </tr>
+
+      <tr>
+        <th rowspan="4">인도 및 스리랑카</th>
+        <td>아삼</td>
+      </tr>
+      <tr>
+        <td>살론</td>
+      </tr>
+    </table>
+
+    <table border="2">
+      <tr>
+        <th colspan="6">한국의 차</th>
+      </tr>
+      <tr>
+        <th rowspan="6">뿌리차</th>
+        <td>인삼차</td>
+        <th rowspan="10">과일차</th>
+        <td>인삼차</td>
+       
+      </tr>
+      <tr>
+         <td>당귀차</td>
+         <tr>
+            <td>당귀차</td>
+         </tr>
+        
+         <tr>
+            <td>당귀차</td>
+
+         </tr>
+
+        <tr>
+  <td>당귀차</td>
+        </tr>
+        
+      
+      </tr>
+    </table>
+
+    <form action="">
+        <input type="text" name = "search">
+         <input type="submit">
+<!-- name은 사용자가 입력한 값을 서버에 보낼 때 '이 값은 어떤 항목의 값이다'라고 알려주는 변수 이름이다 -->
+ 
+ <!-- 
+value의 명확한 정체
+입력창 (text / password): 사용자가 칸에 직접 타이핑한 '글자' 그 자체입니다.
+
+선택창 (radio / checkbox): 화면에는 '남자/여자'라고 써있어도, 클릭 시 서버에 전달될 '미리 정해둔 값' (예: M, F)입니다.
+
+버튼 (submit / button): 버튼 표면에 적혀 있는 '이름표' (예: 전송, 로그인)입니다.
+
+서버 개발자에게 데이터를 보낼 때, 서버는 항상 name=value (예: age=25) 형태로 읽게 됩니다.-->
+
+<!-- 
+label은 사용자가 화면에서 보고 "아, 여기가 아이디 적는 칸이구나!"라고 알게 해주는 사람용 이름표입니다.
+
+label을 사용하면 글자(예: "성별")만 눌러도 옆에 있는 작은 체크박스나 라디오 버튼이 자동으로 선택됩니다.
+
+각 장애인이 사용하는 스크린 리더(화면 읽어주는 프로그램)가 이 입력창이 무엇을 적는 칸인지 정확히 읽어줄 수 있게 합니다.
+
+
+ -->
+
+ <!-- 가급적 input 할 때 name, value 같이 적자 
+  text 나 password 처럼 입력값 자체가 value가 되는 경우 아니면
+  버튼(button, reset)처럼 데이터 자체를 담아 보낼 필요가 없는 요소에는 생략하기도 합니다. -->
+<br>
+ <form action="">
+    <table>
+        <tr>
+            <td>
+                 <label for="username"> 이름</label>
+                 <input id=username type="text" name="username">
+
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                성별
+                <input id=man type="radio" name="gender" value="m">
+                <label for="man">남자</label>
+            
+                <input id=woman type="radio" name="gender" value="w">
+                <label for="woman">여자</label>
+            </td>
+            
+                
+
+            
+                                  
+            
+        </tr>
+      
+
+    
+    </table>
+
+    <input type="submit" value="가입">
+
+   
+
+
+
+ </form>
+
+
+
+
+    </form>
+
+    <select name="" id="">
+      <option value="">김밥</option>
+      <option value="">떡뽁이</option>
+    </select>
+
+
+
+
+    <header>
+      <h1>html5 기본</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li>
+          <a href="#">메뉴</a>
+        </li>
+        <li><a href="#">메뉴</a></li>
+        <li><a href="#">메뉴</a></li>
+        
+
+      </ul>
+      
+    </nav>
+
+    <fieldset>
+      <legend>로그인</legend>
+      <label for="user">사용자 ID</label>
+      <input id="user" type="text" name="username">
+      <br>
+      <label for="password">비밀번호</label>
+      <input id="password" type="text" name="password">
+      <br>
+      <input type="submit" value="확인">
+      <input type="submit" value="다시쓰기">
+    </fieldset>
+
+    <fieldset>
+      <legend>회원가입</legend>
+      <table>
+        <tr>
+          <td>
+            <label for="user">사용자ID</label>
+            <input id="user" type="text" name="username">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="uer">비밀번호</label>
+            <input id="user" type="text" name="username">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="uer">비밀번호 확인</label>
+            <input id="user" type="text" name="username">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="uer">이름</label>
+            <input id="user" type="text" name="username">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            성별
+            <input id="user" type="radio" name="username" value="m">남
+            <input id="user" type="radio" name="username" value="w">여
+          </td>
+        </tr>
+         <tr>
+          <td>
+            취미
+            <input id="user" type="checkbox" name="username" value="m">축구
+            <input id="user" type="checkbox" name="username" value="w">야구
+            <input id="user" type="checkbox" name="username" value="w">배구
+            <input id="user" type="checkbox" name="username" value="w">농구
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="email">email</label>
+            <input id="email" type="text" name="email">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            역할
+            <select name="ch" id="ch">
+              <option value="">
+                ADMIN
+              </option>
+              <option value="">
+                관리자
+              </option>
+              <option value="">
+                일반회원
+              </option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="submit" value="확인">
+            <input type="reset" value="다시쓰기">
+          </td>
+        </tr>
+      </table>
+    </fieldset>
+
+
+
+  </body>
+</html>

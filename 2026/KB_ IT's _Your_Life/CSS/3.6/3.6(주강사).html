@@ -1,0 +1,200 @@
+<!-- <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+        *{
+            color: red;
+        }
+    </style>
+
+    <style>
+        h1{
+            color: pink;
+        }
+        p{
+            color: blue;
+        }
+    </style>
+
+    <style>
+        h1,p {
+            color: green;
+        }
+    </style>
+  </head>
+
+  <body>
+
+    <h1>wpahr rmfwk</h1>
+    <p>rkftnfhr djfuqsp dkfaustjeh ahfmrpTsp</p>
+  </body>
+</html> -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      #head {
+        width: 800px;
+        margin: 0 auto;
+        /* margin :0 auto -> 가운데 정렬 */
+        background: red;
+      }
+
+      #Wrap {
+        width: 800px;
+        margin: 0 auto;
+      }
+
+      #left {
+        width: 200px;
+        float: left;
+        background: rgb(252, 227, 227);
+      }
+
+      #right {
+        width: 600px;
+        float: left;
+        background: rgb(112, 43, 43);
+      }
+
+      .pizza {
+        /* 정밀하게 타겟팅 해주려면 li.pizza라고 해줘야한다.
+            id는 짜피 고유한 애니까 #로 시작해도 되는거고 */
+        background: yellow;
+      }
+      .banana {
+        color: transparent;
+      }
+
+      input[type='text'] {
+        background: red;
+      }
+      input[type='password'] {
+        background: red;
+      }
+      .표1 {
+        background: red;
+      }
+      h2:hover {
+        /* 누구를 고를 것인가(선택자)일 때는 :, 특성을 나타낼 때는 속송{} */
+        color: red;
+      }
+      ul {
+        overflow: hidden;
+      }
+      /* 지금은 양이 적어서 그렇지 글자 양이 많아지면 밖으로 나간다
+      그걸 지워주는 역할을 한다
+      만약 내용을 다 보여주고는 싶은데 일단 화면엔 좀 정리되길 바라면 overflow를 auto로 두면 스크롤이 생김 */
+      li {
+        list-style: none;
+        /* 리스트쓸 때 앞에 검은점 나오는 거 삭제 */
+        float: left;
+        padding: 15px;
+      }
+      li:first-child {
+        border-radius: 10px 0 0 10px 0;
+      }
+      li:last-child {
+        border-radius: 0 10px 10px 0;
+      }
+      li:nth-child(2n) {
+        background: red;
+      }
+      li:nth-child(2n + 1) {
+        background: yellow;
+      }
+      body {
+        background-image: url(../885d191b4d13588a9b85e4a2d27c3bc2.jpg);
+      }
+      /* 실습 폴더까지는 넣어야 ../ 했을 떈 된다 */
+      body {
+        background-image: url(https://i.pinimg.com/474x/f4/19/0f/f4190ff0debfcdd2de1bf4d294d4816f.jpg);
+      }
+
+        /* <!-- 박스 크기와 패딩 조절 --> */
+        div.박스{
+            /* .박스도 가능하지만 div.박스가 훨씬 명확 */
+            width: 100px;height: 100px;background : red;
+            border: 20px solid black;
+            margin: 10px; padding:50px;
+        }
+        div.박스1{
+            width: 100px; height: 100px;
+            background : peru;
+            margin : 200px 100px 100px 300px;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="head">
+      <h1>머리</h1>
+
+      <div id="wrap">
+        <!-- 아래 두개의  사각형을 묶어줄 수 있는 div를 하나 더 만들어서 큰 div를 움직이는 게 
+         나중에 겹치는 문제가 생기지 않고 좋다 -->
+      </div>
+      <div id="left">
+        <h1>왼복도</h1>
+      </div>
+      <div id="right">
+        <h1>오른복도</h1>
+      </div>
+    </div>
+
+    <ul>
+      <li class="banana">바나나</li>
+      <li class="pizza">피자</li>
+      <!-- id를 써도 가능하기는 하지만 class처럼 pizza에 여러 개를 설정하지 못하고 
+         하나당 무조건 하나의 id를 적용해야해서 귀찮다 -->
+      <!-- class는 공백으로 구분해서 여러 개를 쓸 수 있고, 각각의 이름으로 따로따로 조종할 수 있는 만능 태그다 -->
+    </ul>
+
+    <!-- form은 우체국 창구와 같다 -> 데이터를 묶어서 서버로 전송해야할 때는 쓰고,
+     그냥 그 화면에 보여지는 게 끝이라면 안쓴다. ex) input -->
+
+    <!-- 속성선택자는 "일일이 id나 class를 붙이기엔 너무 많을 때,
+    태그가 가진 '특징(속성)'을 기준으로 한꺼번에 골라잡는 도구이다 -->
+
+    <form action="#">
+      <input type="text" />
+      <input type="password" />
+    </form>
+
+    <table border="1">
+      <tr>
+        <th class="표1">안녕</th>
+      </tr>
+    </table>
+    <h2>반응선택자</h2>
+
+    <h1>사용 가능</h1>
+    <h2>사용 불가능</h2>
+
+    <ul>
+      <ul>
+        <li>첫 번째</li>
+        <li>두 번째</li>
+        <li>세 번째</li>
+      </ul>
+    </ul>
+
+    <!-- URL 단위 -->
+    <h1>마지막 시간입니다. 끝까지 힘을 내봐요</h1>
+    <!-- 박스 크기와 패딩 조절 -->
+     <div class="박스"></div>
+     <div class="박스1"></div>
+     <!-- 가시속성
+      none은 원래 차지하던 공간까지 지워버림.
+      광고같은 거  -->
+
+  </body>
+</html>
