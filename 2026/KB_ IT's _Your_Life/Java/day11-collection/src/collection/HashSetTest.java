@@ -26,7 +26,6 @@ public class HashSetTest {
         while(iterator.hasNext()){
             String e = iterator.next();
             System.out.println("꺼낸 값은 " + e);
-            ;
         }
 
         set.remove("fddf");
